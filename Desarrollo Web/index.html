@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenid@ a Notas Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        header {
+            background: url('pexels-pixabay-301943.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 2%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+            padding-top: 5%;
+        }
+        .lead{
+            margin-top: 2%;
+        }
+        footer {
+            background-color: rgb(81, 81, 81);
+            color: white;
+            padding: 2%;
+        }
+        .col-md-6{
+            margin-top: 3%;
+        }
+        .btn-primary{
+            background-color: darkred; /* Rojo */
+            border-color: darkred;
+            color: white; /* Color del texto */
+        }
+        .btn-success{
+            background-color: lightcoral; /* Rojo */
+            border-color: lightcoral;
+            color: white; /* Color del texto */
+        }
+    </style>
+</head>
+<body>
+    <header class="text-center">
+        <div id="cabecera" class="container">
+            <h1 class="text-center">Notas Online</h1>
+        </div>
+    </header>
+
+    <main id="main1" class="d-flex ">
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1 class="display-4">Bienvenid@ a NOL</h1>
+                <p class="lead">Seleccione su tipo de usuario para iniciar sesión.</p>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a class="btn btn-primary btn-lg btn-block" href="Profesor.html" role="button">Inicio de sesión para Profesores</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="btn btn-success btn-lg btn-block" href="Alumno.html" role="button">Inicio de sesión para Alumnos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-3">
+        <div class="container text-center">
+            <p class="mb-0">&copy; Trabajo realizado por el grupo 3ti21_g4<br> Joan López Viana, Enrique Castrillo Casado, Diego Castillo Erustes, Adrián Fabrizio Paolin Gómez, Jose Luis Pulido Gavilanez</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

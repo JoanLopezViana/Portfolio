@@ -1,0 +1,103 @@
+/* Estilo general de la aplicación */
+.root {
+   -fx-background-color: linear-gradient(to bottom right, #bcf9c1, #cbdef3);
+     
+    -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+}
+
+/* Estilo de BorderPane */
+.border-pane {
+    -fx-padding: 20px;
+}
+
+/* Estilo del HBox */
+.hbox {
+    -fx-spacing: 10px;
+    -fx-alignment: center;
+    -fx-padding: 10px;
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #ced4da;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.5, 0, 0);
+}
+
+/* Estilo del VBox */
+.vbox {
+    -fx-spacing: 10px;
+    -fx-padding: 10px;
+}
+
+/* Estilo del Label */
+.label {
+    -fx-font-weight:bold;
+    -fx-text-fill: #495057; /* Color de texto gris oscuro */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+}
+
+/* Estilo del ComboBox */
+.combo-box {
+    -fx-background-color: #ffffff; /* Fondo blanco */
+    -fx-border-color: #ced4da; /* Borde gris */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px; /* Bordes redondeados */
+    -fx-padding: 5px; /* Padding interno */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+    -fx-text-fill: #495057; /* Color del texto */
+}
+
+.combo-box:focused {
+    -fx-border-color: #007bff; /* Color del borde al enfocar */
+    -fx-border-width: 2px; /* Ancho del borde al enfocar */
+}
+
+/* Estilo de los botones */
+.button {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.5, 0, 0);
+    -fx-background-color: #24f11c; /* Fondo azul */
+    
+    -fx-padding: 10px 20px; /* Padding interno */
+    -fx-border-radius: 5px; /* Bordes redondeados */
+    -fx-cursor: hand; /* Cursor de mano */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+    -fx-border: none; /* Sin borde adicional */
+}
+
+.button:hover {
+    -fx-background-color: #20871c; /* Color al pasar el cursor */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+}
+
+.button:pressed {
+    -fx-background-color: #176414; /* Color al presionar */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+}
+
+/* Estilo del TableView */
+.table-view {
+    -fx-background-color: #ffffff; /* Fondo blanco */
+    -fx-border-color: #ced4da; /* Borde gris */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px; /* Bordes redondeados */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+}
+
+.table-column {
+    -fx-text-fill: #495057; /* Color del texto */
+}
+
+/* Estilo del LineChart */
+.chart {
+    -fx-background-color: #ffffff; /* Fondo blanco */
+    -fx-border-color: #ced4da; /* Borde gris */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px; /* Bordes redondeados */
+}
+
+.axis-label {
+    -fx-text-fill: #495057; /* Color del texto */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+}
+
+
+

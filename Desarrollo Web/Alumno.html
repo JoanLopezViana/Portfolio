@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Inicio - Alumno</title>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<script>
+	var nombre = "";
+	var nota = 0;
+	var dni = "";
+	var modoDocumento = false;
+
+	function volverWeb() {
+		document.getElementById('headerAlu').style.visibility = "visible";
+		$("#parrafoImprimible").html("")
+		$("#fechaImprimible").html("")
+		$('body,html').css({
+			"height": "auto",
+			"width": "auto"
+		})
+		document.getElementById('footerImp').style.visibility = "hidden";
+	}
+
+	function generarDocumento() {
+		document.getElementById('headerAlu').style.visibility = "hidden";
+		$("#parrafoImprimible").html("DEW-Centro Educativo certifica que D/Dª " + nombre + " con DNI " + dni + " matriculado/a en el curso 2023/2024, ha obtenido las calificaciones que se muestran en la siguiente tabla.")
+		const options = {
+			weekday: 'long',
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		};
+		var fechaHoy = new Date().toLocaleDateString('es-ES', options)
+		$("#fechaImprimible").html("En Valencia, a " + fechaHoy)
+		$('body,html').css({
+			"height": "297mm",
+			"width": "210mm"
+		})
+		document.getElementById('footerImp').style.visibility = "visible";
+		
+	}
+	$(document).ready(function() {
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const param = urlParams.get('asignatura')
+		$.ajax({
+			url: '/ProyectoFinal/AlumnoFuncionalidades',
+			type: 'GET',
+			dataType: 'json',
+			async: true,
+			data: 'opcion=dni',
+			success: function(data) {
+				nombre = data.nombre + " " + data.apellidos;
+				dni = data.dni;
+				$("#insertar-dni").append(data.nombre + " " + data.apellidos)
+			},
+			error: function() {
+				alert("Error en la petición de los datos del alumno")
+			}
+		})
+		$.getJSON("/ProyectoFinal/AlumnoFuncionalidades?opcion=imagen").done(function(response) {
+			$("#esto").text(response.dni);
+			$("#aqui").attr("src", "data:image/png;base64," + response.img);
+		}).fail(function(jqxhr, textStatus, error) {
+			var err = jqxhr.response.replace(",", "\n"); // Pequeños ajustes
+			alert("Error en la petición de la imagen del alumno :" + error)
+		});
+		if(param == null) {
+			$("#mainAsigContent").hide()
+			$.ajax({
+				url: '/ProyectoFinal/AlumnoFuncionalidades',
+				type: 'GET',
+				dataType: 'json',
+				async: true,
+				data: 'opcion=asig',
+				success: function(data) {
+					$.each(data, function(index, val) {
+						var notaFormatted = (val.nota == "") ? "No calificado" : val.nota;
+						console.log(data);
+						var cuerpoAsig = document.getElementById("cuerpoAsig")
+						var tr = document.createElement('tr')
+						tr.id = val.asignatura
+						var tdNombre = document.createElement('td')
+						var enlaceAsig = document.createElement('a')
+						var tdCurso = document.createElement('td')
+						var tdCreditos = document.createElement('td')
+						var tdCuatri = document.createElement('td')
+						var tdNota = document.createElement('td')
+						$.ajax({
+							url: '/ProyectoFinal/AlumnoFuncionalidades',
+							type: 'GET',
+							dataType: 'json',
+							async: true,
+							data: 'opcion=detalles&acron=' + val.asignatura,
+							success: function(data) {
+								tdCreditos.innerHTML = data.creditos
+								tdCurso.innerHTML = data.curso
+								tdCuatri.innerHTML = data.cuatrimestre
+							},
+							error: function() {
+								alert("Error en la petición de detalles de las asignaturas")
+							}
+						})
+						enlaceAsig.innerHTML = val.asignatura
+						enlaceAsig.setAttribute('href', "Alumno.html?asignatura=" + val.asignatura)
+						tdNombre.appendChild(enlaceAsig)
+						tdNota.innerHTML = notaFormatted
+						tr.appendChild(tdNombre)
+						tr.appendChild(tdCurso)
+						tr.appendChild(tdCreditos)
+						tr.appendChild(tdCuatri)
+						tr.appendChild(tdNota)
+						cuerpoAsig.appendChild(tr)
+					});
+				},
+				error: function() {
+					alert("Error en la petición de las asignaturas")
+				}
+			});
+		} else {
+			$("#genDoc").hide()
+			$("#mainAlumContent").hide()
+			$.ajax({
+				url: '/ProyectoFinal/AlumnoFuncionalidades',
+				type: 'GET',
+				dataType: 'json',
+				async: true,
+				data: 'opcion=asig',
+				success: function(data) {
+					$.each(data, function(index, val) {
+						if(val.asignatura == param) {
+							var notaFormatted = (val.nota == "") ? "No calificado" : val.nota;
+							$.ajax({
+								url: '/ProyectoFinal/AlumnoFuncionalidades',
+								type: 'GET',
+								dataType: 'json',
+								async: true,
+								data: 'opcion=detalles&acron=' + val.asignatura,
+								success: function(data) {
+									$("#notaAsig").html("Nota: " + notaFormatted)
+									$("#cuatriAsig").html("Cuatrimestre: " + data.cuatrimestre)
+									$("#cursoAsig").html("Curso: " + data.curso)
+									$("#credAsig").html("Créditos: " + data.creditos)
+									var indexName = "(" + data.acronimo + ") " + data.nombre
+									$("#nombreAsigIndex").html(indexName)
+									$.ajax({
+										url: '/ProyectoFinal/AlumnoFuncionalidades',
+										type: 'GET',
+										dataType: 'json',
+										async: true,
+										data: 'opcion=asignaturasprofesor&acron=' + val.asignatura,
+										success: function(data) {
+											$.each(data, function(indexpro, valpro) {
+												$("#profeAsig").append("<li>" + valpro.nombre + " " + valpro.apellidos + "</li>")
+											});
+										},
+										error: function() {
+											alert("Error en la petición de las asignaturas")
+										}
+									});
+								},
+								error: function() {
+									alert("Error en la petición de detalles de las asignaturas")
+								}
+							})
+						}
+					});
+				},
+				error: function() {
+					alert("Error en la petición de las asignaturas")
+				}
+			});
+		}
+	})
+	</script>
+</head>
+
+<body>
+	<header id="headerAlu" class="bg-dark py-3">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="#"><img src="logo.png" alt="Notas on-line" width="50" /></a>
+            <div class="text-center text-white flex-grow-1">
+                <h1 class="m-0">NOL - Notas Online</h1>
+            </div>
+            <div class="text-end">
+                <button type="button" id="generarDocumentoBtn" onclick="generarDocumento()" class="btn btn-outline-light me-2">Generar documento</button>
+                <button type="button" class="btn btn-danger"><a style="text-decoration:none; color:white;" href="/ProyectoFinal/Logout">Salir</a></button>
+            </div>
+        </div>
+    </header>
+	 <main class="container mt-5">
+            <section class="mb-5">
+                <div class="card bg-light mx-auto" style="max-width: 800px;">
+                    <div class="card-header text-center">Información del Alumno</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                <img class="rounded-circle shadow-sm" id="aqui" height="125">
+                            </div>
+                            <div class="col-md-8">
+                                <p>Bienvenido <span><b id="insertarDni"></b></span> a Notas Online</p>
+                                <p>Tu DNI es: <b id="esto"></b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="mb-5 text-center">
+                <p id="parrafoImprimible"></p>
+            </section>
+    
+            <section class="mb-5">
+                <div class="table-responsive mx-auto" style="max-width: 800px;">
+                    <table class="table table-striped" id="mainAlumContent">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre Asignatura</th>
+                                <th scope="col">Curso</th>
+                                <th scope="col">Créditos</th>
+                                <th scope="col">Cuatrimestre</th>
+                                <th scope="col">Nota</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoAsig">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+    
+            <section class="mb-5" id="mainAsigContent">
+                <div class="card bg-light mx-auto" style="max-width: 800px;">
+                    <div class="card-header">
+                        <nav style="--bs-breadcrumb-divider: '/'; padding: 15px 0px 0px 15px;" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="Alumno.html">Asignaturas</a></li>
+                                <li class="breadcrumb-item active" aria-current="page" id="nombreAsigIndex"></li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" id="notaAsig">Nota: </li>
+                                    <li class="list-group-item" id="cursoAsig">Curso: </li>
+                                    <li class="list-group-item" id="cuatriAsig">Cuatrimestre: </li>
+                                    <li class="list-group-item" id="creditosAsig">Créditos: </li>
+                                    <li class="list-group-item">Profesores: <br>
+                                        <ul id="profeAsig" style="list-style: initial;">
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6" style="text-align: justify;">
+                                <p class="lead">Descripción</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi blandit vestibulum ligula eget aliquam. Aliquam in risus blandit diam faucibus posuere vel sed arcu. Cras quis ligula enim. Donec et aliquet nisi. Nulla facilisi. Donec auctor dui metus, quis suscipit ligula commodo non. Nulla nec est augue. Curabitur consequat nulla non ligula sollicitudin, ut ultricies nunc pellentesque. Morbi aliquet viverra sollicitudin.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="text-center mb-5">
+                <p id="fechaImprimible"></p>
+            </section>
+        </main>
+	<footer id="footerImp" style="visibility:hidden; position: fixed; left: 0; bottom: 0;width: 100%;  text-align: center;">
+		<a onclick="volverWeb()" href="#"><img src="logo.png" alt="Notas on-line" width="200" /></a>
+	</footer>
+</body>
+
+</html>

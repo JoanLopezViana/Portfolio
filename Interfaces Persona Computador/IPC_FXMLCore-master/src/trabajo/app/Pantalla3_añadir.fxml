@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="527.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabajo.app.Pantalla3_añadirController">
+   <children>
+      <Text fx:id="titulo" layoutX="64.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir gasto">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Text>
+      <Text id="t" layoutX="67.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categoria" />
+      <TextField fx:id="txtCoste" layoutX="67.0" layoutY="199.0" prefHeight="26.0" prefWidth="182.0" />
+      <Text id="t" layoutX="67.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coste" />
+      <Text id="t" layoutX="67.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha del gasto" />
+      <Text id="t" layoutX="71.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
+      <Text id="t" layoutX="66.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripción" />
+      <TextField fx:id="txtNombre" layoutX="67.0" layoutY="324.0" prefHeight="26.0" prefWidth="182.0" />
+      <TextField fx:id="txtDescripción" layoutX="67.0" layoutY="384.0" prefHeight="26.0" prefWidth="182.0" />
+      <Button fx:id="btnGuardar" layoutX="64.0" layoutY="476.0" mnemonicParsing="false" onAction="#guardar" prefHeight="26.0" prefWidth="188.0" text="Guardar" />
+      <HBox layoutX="70.0" layoutY="266.0" prefHeight="42.0" prefWidth="182.0">
+         <children>
+            <DatePicker fx:id="txtFecha" editable="false" prefHeight="26.0" prefWidth="182.0" />
+         </children>
+      </HBox>
+      <Button fx:id="Añadir_but" layoutX="261.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#Añadir_click" text="Añadir Categoria" />
+      <ComboBox fx:id="Categoria_Combo" layoutX="64.0" layoutY="129.0" prefHeight="26.0" prefWidth="188.0" />
+      <TextField fx:id="Cantidad_text" layoutX="64.0" layoutY="72.0" />
+      <Text id="t" layoutX="69.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cantidad" />
+      <Text id="t" layoutX="71.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imagen" />
+      <ImageView fx:id="imagen_select" fitHeight="42.0" fitWidth="48.0" layoutX="121.0" layoutY="419.0" onMouseClicked="#img_click" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/imagenPerfil.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

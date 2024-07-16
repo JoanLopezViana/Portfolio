@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="Nombre" prefHeight="351.0" prefWidth="383.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabajo.app.Añadir_CategoriaController">
+   <children>
+      <VBox layoutX="67.0" layoutY="36.8642578125">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir Categoria">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </Text>
+            <Text id="t" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="Nom_text">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </TextField>
+            <Text id="t" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrpición">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="Desc_text" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="70.0" layoutY="266.0" prefHeight="42.0" prefWidth="215.0">
+         <children>
+            <Button fx:id="butt_guard" mnemonicParsing="false" onAction="#guardar" prefHeight="26.0" prefWidth="188.0" text="Guardar" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

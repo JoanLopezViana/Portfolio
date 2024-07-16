@@ -1,0 +1,97 @@
+/* Estilo general de la aplicación */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #bcf9c1, #cbdef3);
+     
+    -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+}
+
+/* Panel principal */
+#pane {
+    -fx-background-color: #ffffff; /* Fondo blanco para el panel principal */
+    -fx-padding: 20px;
+    -fx-border-color: #ced4da; /* Borde más sutil */
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px; /* Bordes ligeramente redondeados */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.5, 0, 0); /* Sombra sutil */
+}
+
+/* Estilo de las etiquetas */
+.label {
+    -fx-text-fill: #495057; /* Color de texto gris oscuro para mejor legibilidad */
+    -fx-font-size: 14px; /* Tamaño de fuente más consistente */
+    -fx-font-weight:bold;
+}
+
+/* Estilo de los campos de texto */
+.text-field, .password-field {
+    -fx-background-color: #f8f9fa; /* Color de fondo suave */
+    -fx-border-color: #adb5bd; /* Borde gris claro */
+    -fx-border-radius: 5px; /* Bordes redondeados */
+    -fx-padding: 5px 10px; /* Padding interno */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #007bff; /* Borde azul al enfocar */
+    -fx-background-color: #ffffff; /* Fondo blanco al enfocar */
+}
+
+/* Estilo de los botones */
+.button {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.5, 0, 0);
+    -fx-background-color: #24f11c; /* Fondo azul */
+    
+    -fx-padding: 10px 20px; /* Padding interno */
+    -fx-border-radius: 5px; /* Bordes redondeados */
+    -fx-cursor: hand; /* Cursor de mano */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+    -fx-border: none; /* Sin borde adicional */
+}
+
+.button:hover {
+    -fx-background-color: #20871c; /* Color al pasar el cursor */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+}
+
+.button:pressed {
+    -fx-background-color: #176414; /* Color al presionar */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+}
+
+/* Estilo del mensaje de error */
+#Error {
+    -fx-text-fill: #dc3545; /* Color rojo para mensajes de error */
+    -fx-font-size: 12px; /* Tamaño de fuente más pequeño */
+    -fx-font-weight: bold; /* Texto en negrita */
+    -fx-background-color: #f8d7da; /* Fondo ligeramente rosado */
+    -fx-padding: 5px; /* Padding interno */
+    -fx-border-color: #f5c6cb; /* Borde rosado */
+    -fx-border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo del encabezado */
+.top hbox {
+    -fx-alignment: center; /* Centrar el texto */
+    -fx-background-color: #343a40; /* Fondo gris oscuro */
+    -fx-padding: 20px; /* Padding interno */
+}
+
+.top hbox text {
+    -fx-fill: #ffffff; /* Texto blanco */
+    -fx-font-size: 24px; /* Tamaño de fuente más grande */
+    -fx-font-weight: bold; /* Texto en negrita */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 2, 0.5, 0, 0); /* Sombra sutil */
+}
+
+/* Estilo para los enlaces */
+.hyperlink {
+    -fx-text-fill: #007bff; /* Color azul para enlaces */
+    -fx-cursor: hand; /* Cursor de mano */
+    -fx-underline: true; /* Subrayado */
+}
+
+
+
+
+
+

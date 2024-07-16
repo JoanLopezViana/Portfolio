@@ -1,0 +1,126 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 22 may 2024, 16:00:42
+    Author     : Victor
+*/
+/* Estilo general de la aplicación */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #bcf9c1, #cbdef3);
+     
+    -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+}
+
+/* Estilo de AnchorPane */
+.anchor-pane {
+    -fx-padding: 20px;
+}
+
+/* Estilo del Text */
+.text {
+    -fx-font-weight: bold; /* Texto en negrita */
+    -fx-fill: #333; /* Color de texto gris oscuro */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+}
+#t {
+    -fx-font-weight: bold; /* Texto en negrita */
+    -fx-fill: #333; /* Color de texto gris oscuro */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+}
+
+.text-title {
+    -fx-fill: #333; /* Color de texto gris oscuro */
+    -fx-font-size: 27px; /* Tamaño de fuente grande para títulos */
+    -fx-font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilo del TextField */
+.text-field {
+    -fx-background-color: #ffffff; /* Fondo blanco */
+    -fx-border-color: #ced4da; /* Borde gris */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px; /* Bordes redondeados */
+    -fx-padding: 5px; /* Padding interno */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+    -fx-text-fill: #495057; /* Color del texto */
+}
+
+.text-field:focused {
+    -fx-border-color: #007bff; /* Color del borde al enfocar */
+    -fx-border-width: 2px; /* Ancho del borde al enfocar */
+}
+
+/* Estilo del ComboBox */
+.combo-box {
+    -fx-background-color: #ffffff; /* Fondo blanco */
+    -fx-border-color: #ced4da; /* Borde gris */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px; /* Bordes redondeados */
+    -fx-padding: 5px; /* Padding interno */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+    -fx-text-fill: #495057; /* Color del texto */
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #495057; /* Color del texto en la lista */
+}
+
+.combo-box .list-cell:filled:selected, 
+.combo-box .list-cell:filled:hover {
+    -fx-background-color: #007bff; /* Fondo azul al seleccionar o pasar el cursor */
+    -fx-text-fill: #ffffff; /* Texto blanco al seleccionar o pasar el cursor */
+}
+
+.combo-box:focused {
+    -fx-border-color: #007bff; /* Color del borde al enfocar */
+    -fx-border-width: 2px; /* Ancho del borde al enfocar */
+}
+
+/* Estilo del DatePicker */
+.date-picker {
+    -fx-background-color: #ffffff; /* Fondo blanco */
+    -fx-border-color: #ced4da; /* Borde gris */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px; /* Bordes redondeados */
+    -fx-padding: 5px; /* Padding interno */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+    -fx-text-fill: #495057; /* Color del texto */
+}
+
+.date-picker:focused {
+    -fx-border-color: #007bff; /* Color del borde al enfocar */
+    -fx-border-width: 2px; /* Ancho del borde al enfocar */
+}
+
+/* Estilo de los botones */
+.button {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.5, 0, 0);
+    -fx-background-color: #24f11c; /* Fondo azul */
+    -fx-padding: 10px 20px; /* Padding interno */
+    -fx-border-radius: 5px; /* Bordes redondeados */
+    -fx-cursor: hand; /* Cursor de mano */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+    -fx-border: none; /* Sin borde adicional */
+}
+
+.button:hover {
+    -fx-background-color: #20871c; /* Color al pasar el cursor */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+}
+
+.button:pressed {
+    -fx-background-color: #176414; /* Color al presionar */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+}
+
+/* Estilo del ImageView */
+.image-view {
+    -fx-cursor: hand; /* Cursor de mano al pasar sobre la imagen */
+}
+
+.image-view:hover {
+    -fx-opacity: 0.7; /* Efecto de opacidad al pasar el cursor */
+}
+

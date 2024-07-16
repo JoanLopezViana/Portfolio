@@ -1,0 +1,116 @@
+/* Estilo general de la aplicación */
+.root {
+   /* -fx-background-image: url("../imagenes/icono_aplicacion.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+   /* -fx-background-color: #e9ecef; /* Color de fondo suave */
+  -fx-background-color: linear-gradient(to bottom right, #bcf9c1, #cbdef3);
+     
+    -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+}
+
+#titulo{
+    -fx-font-weight:bold;
+    -fx-text-fill: #495057; /* Color de texto gris oscuro */
+    -fx-font-size: 30px; /* Tamaño de fuente consistente */
+}
+
+
+/* Estilo de las etiquetas */
+.label {
+    -fx-font-weight:bold;
+    -fx-text-fill: #495057; /* Color de texto gris oscuro */
+    -fx-font-size: 17px; /* Tamaño de fuente consistente */
+}
+
+/* Estilo de los campos de texto */
+.text-field, .password-field {
+    -fx-background-color: #f8f9fa; /* Fondo suave */
+    -fx-border-color: #adb5bd; /* Borde gris claro */
+    -fx-border-radius: 5px; /* Bordes redondeados */
+    -fx-padding: 5px 10px; /* Padding interno */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #007bff; /* Borde azul al enfocar */
+    -fx-background-color: #ffffff; /* Fondo blanco al enfocar */
+}
+
+/* Estilo de los botones */
+.button {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.5, 0, 0);
+    -fx-background-color: #24f11c; /* Fondo azul */
+    -fx-padding: 10px 20px; /* Padding interno */
+    -fx-border-radius: 5px; /* Bordes redondeados */
+    -fx-cursor: hand; /* Cursor de mano */
+    -fx-font-size: 14px; /* Tamaño de fuente consistente */
+    -fx-border: none; /* Sin borde adicional */
+}
+
+.button:hover {
+    -fx-background-color: #20871c; /* Color al pasar el cursor */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+}
+
+.button:pressed {
+    -fx-background-color: #176414; /* Color al presionar */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+}
+
+/* Estilo del encabezado */
+.top hbox {
+    -fx-alignment: center; /* Centrar el texto */
+    -fx-background-color: #343a40; /* Fondo gris oscuro */
+    -fx-padding: 20px; /* Padding interno */
+}
+
+.top hbox text {
+    -fx-fill: #ffffff; /* Texto blanco */
+    -fx-font-size: 24px; /* Tamaño de fuente grande */
+    -fx-font-weight: bold; /* Texto en negrita */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 2, 0.5, 0, 0); /* Sombra sutil */
+}
+
+/* Estilo de la imagen */
+.image-view {
+    -fx-border-color: #adb5bd; /* Borde gris claro */
+    -fx-border-radius: 5px; /* Bordes redondeados */
+    -fx-padding: 5px; /* Padding interno */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.5, 0, 0); /* Sombra sutil */
+}
+
+/* Estilo de los botones en la parte central */
+.anchor-pane .button {
+    -fx-background-color: #007bff; /* Fondo azul */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+    -fx-padding: 15px 30px; /* Padding más grande */
+    -fx-font-size: 16px; /* Tamaño de fuente más grande */
+    -fx-border-radius: 10px; /* Bordes redondeados */
+    -fx-cursor: hand; /* Cursor de mano */
+}
+
+.anchor-pane .button:hover {
+    -fx-background-color: #0056b3; /* Color al pasar el cursor */
+}
+
+.anchor-pane .button:pressed {
+    -fx-background-color: #004085; /* Color al presionar */
+}
+
+/* Estilo de los enlaces */
+.hyperlink {
+    -fx-text-fill: #007bff; /* Color azul */
+    -fx-cursor: hand; /* Cursor de mano */
+    -fx-underline: true; /* Subrayado */
+}
+
+/* Estilo de VBox y HBox para consistencia */
+.vbox, .hbox {
+    -fx-spacing: 10px; /* Espaciado entre elementos */
+    -fx-padding: 10px; /* Padding interno */
+}
+
+
+

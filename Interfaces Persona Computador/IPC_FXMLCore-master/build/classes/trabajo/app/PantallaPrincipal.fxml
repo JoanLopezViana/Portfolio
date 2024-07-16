@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="600.0" prefHeight="600.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabajo.app.PantallaPrincipalController">
+   <center>
+      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" minHeight="142.0" minWidth="489.0" prefHeight="600.0" prefWidth="830.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="154.0" prefWidth="542.0">
+                     <children>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="Image" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagenes/añadirImagen.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                        <VBox prefHeight="154.0" prefWidth="427.0">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="416.0" text="Bienvenido / Benvingut / Welcome">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="labelNickName" prefHeight="35.0" prefWidth="293.0" text="Nickname : ">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnPerfil" mnemonicParsing="false" onAction="#PerfilOnAction" prefHeight="39.0" prefWidth="63.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="31.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/id-card-line_2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="86.0" prefWidth="486.0" />
+                  <VBox alignment="CENTER" prefHeight="258.0" prefWidth="59.0">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <VBox alignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label text="Mi Cuenta">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Button fx:id="btnVerCuenta" mnemonicParsing="false" onAction="#VerCuentaOnAction" prefHeight="61.0" prefWidth="97.0">
+                                       <graphic>
+                                          <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../imagenes/wallet-line_2.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label text="Mis Estadísticas">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label> <!-- Espacio en blanco -->
+                                    <Button fx:id="btnGenerarInforme" mnemonicParsing="false" onAction="#GenerarInformeOnAction" prefHeight="100.0" prefWidth="100.0">
+                                       <graphic>
+                                          <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../imagenes/line-chart-fill_2.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label text="Mis Categorías">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Button fx:id="btnGestionarCategorias" mnemonicParsing="false" onAction="#GestionarCategoriasOnAction" prefHeight="100.0" prefWidth="100.0">
+                                       <graphic>
+                                          <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../imagenes/hashtag_2.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Button fx:id="btnAtras" mnemonicParsing="false" onAction="#atrasOnAction" prefHeight="50.0" prefWidth="98.0">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="38.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagenes/logout-box-line_2.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <top>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Label id="titulo" text="Menú Principal" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="25.0" top="15.0" />
+         </BorderPane.margin>
+      </VBox>
+   </top>
+</BorderPane>

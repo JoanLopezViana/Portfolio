@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentacion", "Presentacion", "{23459AA9-9C31-46A9-82EB-C23A0A0BB60F}"
+	ProjectSection(SolutionItems) = preProject
+		..\Soluciones\Presentation.cs = ..\Soluciones\Presentation.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{452FE7ED-500E-48F7-960F-B9B07ED41DDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpvTubeLib", "ClassLibrary\UpvTubeLib.csproj", "{A224ED28-F490-4B4B-ACF2-C5AFF7961DB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{67CB5545-6A99-44A9-9D8E-9FF7AF4A0FB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPVTubePersistenceTests", "UPVTubePersistenceTests\UPVTubePersistenceTests.csproj", "{2F43F354-5D3C-48BA-A632-00D79D6607EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPVTubeObjectDesignTests", "UPVTubeObjectDesignTests\UPVTubeObjectDesignTests.csproj", "{48E97C2A-5638-42CF-B6F9-62EFF5DBBA34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBTest", "DBTest\DBTest.csproj", "{039215E4-DF1C-43FB-8794-11BB8D65237E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPVTube.GUI", "UPVTube.GUI\UPVTube.GUI.csproj", "{0203820D-D0C0-4109-930D-3D824AE7BF46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A224ED28-F490-4B4B-ACF2-C5AFF7961DB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A224ED28-F490-4B4B-ACF2-C5AFF7961DB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A224ED28-F490-4B4B-ACF2-C5AFF7961DB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A224ED28-F490-4B4B-ACF2-C5AFF7961DB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F43F354-5D3C-48BA-A632-00D79D6607EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F43F354-5D3C-48BA-A632-00D79D6607EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F43F354-5D3C-48BA-A632-00D79D6607EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F43F354-5D3C-48BA-A632-00D79D6607EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E97C2A-5638-42CF-B6F9-62EFF5DBBA34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E97C2A-5638-42CF-B6F9-62EFF5DBBA34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E97C2A-5638-42CF-B6F9-62EFF5DBBA34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E97C2A-5638-42CF-B6F9-62EFF5DBBA34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{039215E4-DF1C-43FB-8794-11BB8D65237E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{039215E4-DF1C-43FB-8794-11BB8D65237E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{039215E4-DF1C-43FB-8794-11BB8D65237E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{039215E4-DF1C-43FB-8794-11BB8D65237E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0203820D-D0C0-4109-930D-3D824AE7BF46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0203820D-D0C0-4109-930D-3D824AE7BF46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0203820D-D0C0-4109-930D-3D824AE7BF46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0203820D-D0C0-4109-930D-3D824AE7BF46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A224ED28-F490-4B4B-ACF2-C5AFF7961DB8} = {452FE7ED-500E-48F7-960F-B9B07ED41DDA}
+		{2F43F354-5D3C-48BA-A632-00D79D6607EE} = {67CB5545-6A99-44A9-9D8E-9FF7AF4A0FB9}
+		{48E97C2A-5638-42CF-B6F9-62EFF5DBBA34} = {67CB5545-6A99-44A9-9D8E-9FF7AF4A0FB9}
+		{039215E4-DF1C-43FB-8794-11BB8D65237E} = {67CB5545-6A99-44A9-9D8E-9FF7AF4A0FB9}
+		{0203820D-D0C0-4109-930D-3D824AE7BF46} = {23459AA9-9C31-46A9-82EB-C23A0A0BB60F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B288C6F8-5B99-490D-8D26-218B209A5014}
+	EndGlobalSection
+EndGlobal
